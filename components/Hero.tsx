@@ -82,8 +82,8 @@ function CoffeeCupLogo() {
       <path d="M 28 90 L 37 132 Q 37 140 45 140 L 95 140 Q 103 140 103 132 L 112 90 Z"
         stroke="#c8a96e" strokeWidth="1.8" fill="none" strokeLinejoin="round"/>
       <rect x="24" y="81" width="92" height="12" rx="6" stroke="#c8a96e" strokeWidth="1.8" fill="none"/>
-      {/* Handle */}
-      <path d="M 112 96 Q 130 96 130 114 Q 130 132 112 132"
+      {/* Handle — connects at cup body right edge top (112,92) and bottom curve (103,132) */}
+      <path d="M 112 92 Q 133 92 133 112 Q 133 133 103 132"
         stroke="#c8a96e" strokeWidth="1.8" strokeLinecap="round" fill="none"/>
       {/* CNS monogram */}
       <text x="70" y="122" fontFamily="Georgia, serif" fontSize="18"
