@@ -7,6 +7,7 @@ function CoffeeCupLogo() {
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       className="w-48 h-56 sm:w-64 sm:h-72 lg:w-72 lg:h-80"
+      overflow="visible"
       aria-hidden="true"
     >
       <defs>
@@ -25,6 +26,18 @@ function CoffeeCupLogo() {
           <feGaussianBlur stdDeviation="2.5" result="blur"/>
           <feComposite in="SourceGraphic" in2="blur" operator="over"/>
         </filter>
+        <style>{`
+          @keyframes cnsZzzRise {
+            0%   { transform: translateY(0);    opacity: 0; }
+            12%  { opacity: 1; }
+            88%  { opacity: 0.6; }
+            100% { transform: translateY(-28px); opacity: 0; }
+          }
+          .cns-z { animation: cnsZzzRise 2.4s ease-in-out infinite; }
+          .cns-z1 { animation-delay: 0s; }
+          .cns-z2 { animation-delay: 0.8s; }
+          .cns-z3 { animation-delay: 1.6s; }
+        `}</style>
       </defs>
 
       {/* Stars */}
@@ -60,10 +73,10 @@ function CoffeeCupLogo() {
       <path d="M 28 90 L 37 132 Q 37 140 45 140 L 95 140 Q 103 140 103 132 L 112 90 Z" fill="#1a1a1a"/>
       <rect x="24" y="81" width="92" height="12" rx="6" fill="#1a1a1a"/>
 
-      {/* Zzz steam */}
-      <text x="38" y="75" fontFamily="Georgia, serif" fontSize="10" fill="#c8a96e" opacity="0.9" fontStyle="italic">z</text>
-      <text x="52" y="64" fontFamily="Georgia, serif" fontSize="12" fill="#c8a96e" opacity="0.7" fontStyle="italic">z</text>
-      <text x="68" y="51" fontFamily="Georgia, serif" fontSize="14" fill="#c8a96e" opacity="0.52" fontStyle="italic">z</text>
+      {/* Zzz — each starts just above the cup rim and floats upward */}
+      <text className="cns-z cns-z1" x="36" y="78" fontFamily="Georgia, serif" fontSize="10" fill="#c8a96e" fontStyle="italic">z</text>
+      <text className="cns-z cns-z2" x="51" y="78" fontFamily="Georgia, serif" fontSize="12" fill="#c8a96e" fontStyle="italic">z</text>
+      <text className="cns-z cns-z3" x="67" y="78" fontFamily="Georgia, serif" fontSize="14" fill="#c8a96e" fontStyle="italic">z</text>
 
       {/* Cup strokes */}
       <path d="M 28 90 L 37 132 Q 37 140 45 140 L 95 140 Q 103 140 103 132 L 112 90 Z"
