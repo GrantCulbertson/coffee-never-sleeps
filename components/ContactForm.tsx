@@ -89,7 +89,7 @@ export default function ContactForm() {
       </div>
 
       {state === 'error' && (
-        <p className="text-red-400 text-sm">
+        <p role="alert" className="text-red-400 text-sm">
           Something went wrong. Please try again or email{' '}
           <a href="mailto:tom@coffeeneversleepsllc.com" className="underline hover:text-gold">
             tom@coffeeneversleepsllc.com
@@ -101,6 +101,7 @@ export default function ContactForm() {
       <button
         type="submit"
         disabled={state === 'loading'}
+        aria-busy={state === 'loading'}
         className="w-full sm:w-auto bg-gold text-espresso text-sm font-bold tracking-widest uppercase px-8 py-4 hover:bg-gold-light disabled:opacity-50 transition-colors duration-200"
       >
         {state === 'loading' ? 'Sending...' : 'Send Message'}

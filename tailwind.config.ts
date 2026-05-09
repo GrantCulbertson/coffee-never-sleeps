@@ -11,6 +11,7 @@ const config: Config = {
       colors: {
         espresso: '#1a1a1a',
         'espresso-card': '#222222',
+        'espresso-dark': '#111111',
         gold: '#c8a96e',
         'gold-light': '#d4b483',
       },

@@ -34,6 +34,7 @@ export default function Hero() {
               fill
               className="object-cover object-top"
               priority
+              sizes="(max-width: 640px) 256px, (max-width: 1024px) 320px, 384px"
             />
           </div>
 
