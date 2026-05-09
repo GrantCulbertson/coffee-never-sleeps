@@ -1,6 +1,13 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+@theme {
+  --color-espresso: #1a1a1a;
+  --color-espresso-card: #222222;
+  --color-espresso-dark: #111111;
+  --color-gold: #c8a96e;
+  --color-gold-light: #d4b483;
+  --font-serif: Georgia, Cambria, "Times New Roman", Times, serif;
+}
 
 * {
   box-sizing: border-box;
