@@ -6,7 +6,7 @@ function CoffeeCupLogo() {
       viewBox="0 0 140 160"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      className="w-48 h-56 sm:w-64 sm:h-72 lg:w-72 lg:h-80"
+      className="w-52 h-60 sm:w-64 sm:h-72 lg:w-80 lg:h-96"
       overflow="visible"
       aria-hidden="true"
     >
@@ -103,8 +103,8 @@ export default function Hero() {
             <p className="text-gold text-sm tracking-[0.25em] uppercase mb-4">
               25 Years in the Coffee Industry
             </p>
-            <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl text-white leading-tight mb-6">
-              Coffee Consulting,<br />From Bean to Bottle
+            <h1 className="font-serif text-4xl lg:text-4xl xl:text-5xl text-white leading-tight mb-6">
+              Coffee Consulting, From Bean to Bottle
             </h1>
             <p className="text-gray-400 text-lg leading-relaxed mb-8 max-w-xl mx-auto lg:mx-0">
               Sourcing, roasting, private label, concentrates, and RTDs — expert guidance at every stage.
@@ -118,7 +118,7 @@ export default function Hero() {
           </div>
 
           {/* Logo mark */}
-          <div className="flex-shrink-0 flex items-center justify-center">
+          <div className="flex-1 flex items-center justify-center">
             <CoffeeCupLogo />
           </div>
 
