@@ -8,7 +8,7 @@ export default function Nav() {
           href="/"
           className="font-serif text-gold text-base tracking-widest uppercase"
         >
-          Coffee Never Sleeps
+          Coffee Never Sleeps LLC
         </Link>
         <Link
           href="/contact"

@@ -1,6 +1,6 @@
 export default function Footer() {
   return (
-    <footer className="bg-espresso border-t border-white/5 py-8 px-4 sm:px-6 lg:px-8">
+    <footer className="bg-espresso-dark border-t border-white/5 py-8 px-4 sm:px-6 lg:px-8">
       <div className="max-w-6xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-4 text-sm text-gray-500">
         <p>
           © 2026 Coffee Never Sleeps LLC ·{' '}

@@ -3,68 +3,78 @@ import Link from 'next/link'
 function CoffeeCupLogo() {
   return (
     <svg
-      viewBox="0 0 200 220"
+      viewBox="0 0 140 160"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      className="w-48 h-48 sm:w-64 sm:h-64 lg:w-72 lg:h-72"
+      className="w-48 h-56 sm:w-64 sm:h-72 lg:w-72 lg:h-80"
       aria-hidden="true"
     >
-      {/* Steam wisps */}
-      <path
-        d="M72 52 C72 40 82 40 82 28 C82 16 72 16 72 4"
-        stroke="#c8a96e"
-        strokeWidth="2.5"
-        strokeLinecap="round"
-        fill="none"
-        opacity="0.9"
-      />
-      <path
-        d="M100 60 C100 46 112 46 112 32 C112 18 100 18 100 4"
-        stroke="#c8a96e"
-        strokeWidth="2.5"
-        strokeLinecap="round"
-        fill="none"
-      />
-      <path
-        d="M128 52 C128 40 118 40 118 28 C118 16 128 16 128 4"
-        stroke="#c8a96e"
-        strokeWidth="2.5"
-        strokeLinecap="round"
-        fill="none"
-        opacity="0.9"
-      />
+      <defs>
+        <radialGradient id="cns-glow-outer" cx="50%" cy="37%" r="50%">
+          <stop offset="0%"   stopColor="#c8a96e" stopOpacity="0.30"/>
+          <stop offset="30%"  stopColor="#c8a96e" stopOpacity="0.14"/>
+          <stop offset="60%"  stopColor="#c8a96e" stopOpacity="0.04"/>
+          <stop offset="100%" stopColor="#c8a96e" stopOpacity="0"/>
+        </radialGradient>
+        <radialGradient id="cns-moon-face" cx="38%" cy="38%" r="62%">
+          <stop offset="0%"   stopColor="#d4b483" stopOpacity="0.22"/>
+          <stop offset="60%"  stopColor="#c8a96e" stopOpacity="0.10"/>
+          <stop offset="100%" stopColor="#c8a96e" stopOpacity="0.05"/>
+        </radialGradient>
+        <filter id="cns-rim-glow" x="-20%" y="-20%" width="140%" height="140%">
+          <feGaussianBlur stdDeviation="2.5" result="blur"/>
+          <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+        </filter>
+      </defs>
 
-      {/* Cup body */}
-      <path
-        d="M48 76 L60 168 Q60 176 70 176 L130 176 Q140 176 140 168 L152 76 Z"
-        stroke="#c8a96e"
-        strokeWidth="2"
-        fill="none"
-        strokeLinejoin="round"
-      />
+      {/* Stars */}
+      <circle cx="18" cy="20" r="1.3" fill="#c8a96e" opacity="0.7"/>
+      <circle cx="30" cy="9"   r="0.9" fill="#c8a96e" opacity="0.55"/>
+      <circle cx="110" cy="14" r="1.1" fill="#c8a96e" opacity="0.6"/>
+      <circle cx="124" cy="30" r="0.8" fill="#c8a96e" opacity="0.45"/>
+      <circle cx="12"  cy="42" r="0.9" fill="#c8a96e" opacity="0.4"/>
+      <circle cx="128" cy="52" r="1"   fill="#c8a96e" opacity="0.4"/>
 
-      {/* Cup rim */}
-      <rect x="44" y="68" width="112" height="12" rx="6" stroke="#c8a96e" strokeWidth="2" fill="none" />
+      {/* Outer bloom */}
+      <circle cx="70" cy="58" r="80" fill="url(#cns-glow-outer)"/>
 
+      {/* Corona ring (blurred) */}
+      <circle cx="70" cy="58" r="50" stroke="#c8a96e" strokeWidth="6" fill="none" opacity="0.06" filter="url(#cns-rim-glow)"/>
+
+      {/* Moon body */}
+      <circle cx="70" cy="58" r="46" fill="url(#cns-moon-face)" stroke="#c8a96e" strokeWidth="1.4"/>
+      {/* Bright rim highlight arc */}
+      <path d="M 34 42 A 46 46 0 0 1 94 26" stroke="#c8a96e" strokeWidth="1.5" fill="none" opacity="0.5" strokeLinecap="round"/>
+
+      {/* Craters */}
+      <circle cx="52" cy="42" r="8"    stroke="#c8a96e" strokeWidth="0.9" fill="none" opacity="0.38"/>
+      <circle cx="50" cy="43" r="3"    fill="#c8a96e" fillOpacity="0.09"/>
+      <circle cx="82" cy="36" r="5"    stroke="#c8a96e" strokeWidth="0.7" fill="none" opacity="0.30"/>
+      <circle cx="81" cy="36" r="1.8"  fill="#c8a96e" fillOpacity="0.08"/>
+      <circle cx="68" cy="68" r="4"    stroke="#c8a96e" strokeWidth="0.7" fill="none" opacity="0.24"/>
+      <circle cx="90" cy="62" r="3"    stroke="#c8a96e" strokeWidth="0.6" fill="none" opacity="0.22"/>
+      <circle cx="46" cy="66" r="2.5"  stroke="#c8a96e" strokeWidth="0.6" fill="none" opacity="0.22"/>
+      <ellipse cx="74" cy="52" rx="14" ry="10" fill="#c8a96e" fillOpacity="0.05"/>
+
+      {/* Cup mask — hides moon behind cup body */}
+      <path d="M 28 90 L 37 132 Q 37 140 45 140 L 95 140 Q 103 140 103 132 L 112 90 Z" fill="#1a1a1a"/>
+      <rect x="24" y="81" width="92" height="12" rx="6" fill="#1a1a1a"/>
+
+      {/* Zzz steam */}
+      <text x="38" y="75" fontFamily="Georgia, serif" fontSize="10" fill="#c8a96e" opacity="0.9" fontStyle="italic">z</text>
+      <text x="52" y="64" fontFamily="Georgia, serif" fontSize="12" fill="#c8a96e" opacity="0.7" fontStyle="italic">z</text>
+      <text x="68" y="51" fontFamily="Georgia, serif" fontSize="14" fill="#c8a96e" opacity="0.52" fontStyle="italic">z</text>
+
+      {/* Cup strokes */}
+      <path d="M 28 90 L 37 132 Q 37 140 45 140 L 95 140 Q 103 140 103 132 L 112 90 Z"
+        stroke="#c8a96e" strokeWidth="1.8" fill="none" strokeLinejoin="round"/>
+      <rect x="24" y="81" width="92" height="12" rx="6" stroke="#c8a96e" strokeWidth="1.8" fill="none"/>
       {/* Handle */}
-      <path
-        d="M152 100 Q178 100 178 128 Q178 156 152 156"
-        stroke="#c8a96e"
-        strokeWidth="2.5"
-        strokeLinecap="round"
-        fill="none"
-      />
-
-      {/* Saucer */}
-      <ellipse cx="100" cy="188" rx="64" ry="10" stroke="#c8a96e" strokeWidth="2" fill="none" />
-      <line x1="36" y1="188" x2="164" y2="188" stroke="#c8a96e" strokeWidth="2" opacity="0.3" />
-
-      {/* Subtle fill on cup */}
-      <path
-        d="M50 80 L61 164 Q61 172 70 172 L130 172 Q139 172 139 164 L150 80 Z"
-        fill="#c8a96e"
-        opacity="0.04"
-      />
+      <path d="M 112 96 Q 130 96 130 114 Q 130 132 112 132"
+        stroke="#c8a96e" strokeWidth="1.8" strokeLinecap="round" fill="none"/>
+      {/* CNS monogram */}
+      <text x="70" y="122" fontFamily="Georgia, serif" fontSize="18"
+        fill="#c8a96e" opacity="0.6" textAnchor="middle" letterSpacing="3">CNS</text>
     </svg>
   )
 }
