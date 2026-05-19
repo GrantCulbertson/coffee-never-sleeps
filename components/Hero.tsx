@@ -8,7 +8,7 @@ export default function Hero() {
       {/* Farm photo — fills the right 62% of the hero, Tom's face/upper body visible at top */}
       <div className="absolute right-0 top-0 h-full w-[62%]">
         <Image
-          src="/IMG_8845.PNG"
+          src="/IMG_8845_2x.webp"
           alt="Tom Sessions at coffee origin — inspecting coffee plants at farm"
           fill
           className="object-cover object-top"
@@ -22,7 +22,7 @@ export default function Hero() {
         className="absolute inset-0"
         style={{
           background:
-            'linear-gradient(to right, #1a1a1a 0%, #1a1a1a 27%, rgba(26,26,26,0.92) 36%, rgba(26,26,26,0.65) 45%, rgba(26,26,26,0.25) 55%, rgba(26,26,26,0.04) 64%, transparent 72%)',
+            'linear-gradient(to right, #1a1a1a 0%, #1a1a1a 20%, rgba(26,26,26,0.95) 30%, rgba(26,26,26,0.80) 40%, rgba(26,26,26,0.52) 51%, rgba(26,26,26,0.20) 62%, rgba(26,26,26,0.03) 70%, transparent 77%)',
         }}
       />
 
