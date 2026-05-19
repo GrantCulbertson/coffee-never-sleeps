@@ -8,7 +8,7 @@ export default function Hero() {
       {/* Farm photo — fills the right 62% of the hero, Tom's face/upper body visible at top */}
       <div className="absolute right-0 top-0 h-full w-[62%]">
         <Image
-          src="/IMG_8845_2x.webp"
+          src="/IMG_8845_4x.webp"
           alt="Tom Sessions at coffee origin — inspecting coffee plants at farm"
           fill
           className="object-cover object-top"
