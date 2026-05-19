@@ -5,24 +5,24 @@ export default function Hero() {
   return (
     <section className="relative min-h-screen bg-espresso flex items-center overflow-hidden">
 
-      {/* Farm photo — fills the right 55% of the hero, Tom's face/upper body visible at top */}
-      <div className="absolute right-0 top-0 h-full w-[55%]">
+      {/* Farm photo — fills the right 62% of the hero, Tom's face/upper body visible at top */}
+      <div className="absolute right-0 top-0 h-full w-[62%]">
         <Image
           src="/IMG_8845.PNG"
           alt="Tom Sessions at coffee origin — inspecting coffee plants at farm"
           fill
           className="object-cover object-top"
-          sizes="55vw"
+          sizes="62vw"
           priority
         />
       </div>
 
-      {/* Gradient — solid espresso for text area, long fade into the photo */}
+      {/* Gradient — solid espresso behind text, steep visible fade crossing into photo */}
       <div
         className="absolute inset-0"
         style={{
           background:
-            'linear-gradient(to right, #1a1a1a 0%, #1a1a1a 26%, rgba(26,26,26,0.92) 38%, rgba(26,26,26,0.55) 52%, rgba(26,26,26,0.12) 63%, transparent 73%)',
+            'linear-gradient(to right, #1a1a1a 0%, #1a1a1a 27%, rgba(26,26,26,0.92) 36%, rgba(26,26,26,0.65) 45%, rgba(26,26,26,0.25) 55%, rgba(26,26,26,0.04) 64%, transparent 72%)',
         }}
       />
 
