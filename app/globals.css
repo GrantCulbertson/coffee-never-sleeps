@@ -21,3 +21,9 @@ body {
   background-color: #1a1a1a;
   color: #ffffff;
 }
+
+@utility scrollbar-hide {
+  &::-webkit-scrollbar { display: none; }
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}

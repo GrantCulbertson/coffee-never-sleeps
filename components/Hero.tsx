@@ -29,6 +29,9 @@ export default function Hero() {
       {/* Text */}
       <div className="relative z-10 w-full max-w-6xl mx-auto px-8 sm:px-12 lg:px-16 xl:px-24 pt-32 pb-16">
         <div className="max-w-lg">
+          <p className="text-white text-2xl font-serif mb-1">
+            Tom Sessions
+          </p>
           <p className="text-gold text-sm tracking-[0.25em] uppercase mb-4">
             25 Years in the Coffee Industry
           </p>

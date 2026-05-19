@@ -22,7 +22,28 @@ export default function PhotoGallery({ images }: { images: GalleryImage[] }) {
 
   return (
     <>
-      <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+      {/* Mobile carousel */}
+      <div className="flex sm:hidden overflow-x-auto snap-x snap-mandatory scrollbar-hide gap-3 -mx-4 px-4">
+        {images.map((img) => (
+          <button
+            key={img.src}
+            onClick={() => setActive(img)}
+            className="relative snap-center flex-none w-[82vw] aspect-[4/3] overflow-hidden shadow-lg cursor-zoom-in group rounded-sm"
+            aria-label={`View: ${img.alt}`}
+          >
+            <Image
+              src={img.src}
+              alt={img.alt}
+              fill
+              className="object-cover group-hover:scale-105 transition-transform duration-500"
+              sizes="82vw"
+            />
+          </button>
+        ))}
+      </div>
+
+      {/* Desktop grid */}
+      <div className="hidden sm:grid sm:grid-cols-3 gap-4">
         {images.map((img) => (
           <button
             key={img.src}
@@ -35,7 +56,7 @@ export default function PhotoGallery({ images }: { images: GalleryImage[] }) {
               alt={img.alt}
               fill
               className="object-cover group-hover:scale-105 transition-transform duration-500"
-              sizes="(max-width: 640px) 100vw, 33vw"
+              sizes="33vw"
             />
           </button>
         ))}
