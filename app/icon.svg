@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none">
+  <!-- Background -->
+  <rect width="32" height="32" rx="6" fill="#1a1a1a"/>
+
+  <!-- Moon glow bloom -->
+  <circle cx="16" cy="12" r="10" fill="#c8a96e" opacity="0.12"/>
+
+  <!-- Moon body -->
+  <circle cx="16" cy="12" r="7.5" fill="#c8a96e" opacity="0.18" stroke="#c8a96e" stroke-width="0.8"/>
+
+  <!-- Cup mask — hides moon behind cup -->
+  <path d="M 7 18.5 L 8.8 26 Q 8.8 27.5 10.5 27.5 L 21.5 27.5 Q 23.2 27.5 23.2 26 L 25 18.5 Z" fill="#1a1a1a"/>
+  <rect x="6" y="16" width="20" height="3.5" rx="1.75" fill="#1a1a1a"/>
+
+  <!-- Cup outline -->
+  <path d="M 7 18.5 L 8.8 26 Q 8.8 27.5 10.5 27.5 L 21.5 27.5 Q 23.2 27.5 23.2 26 L 25 18.5 Z"
+        stroke="#c8a96e" stroke-width="1.2" fill="none" stroke-linejoin="round"/>
+  <rect x="6" y="16" width="20" height="3.5" rx="1.75" stroke="#c8a96e" stroke-width="1.2" fill="none"/>
+
+  <!-- Handle -->
+  <path d="M 25 17.5 Q 29 17.5 29 21 Q 29 24.5 23.2 24.3"
+        stroke="#c8a96e" stroke-width="1.2" stroke-linecap="round" fill="none"/>
+</svg>
