@@ -1,10 +1,18 @@
 import Image from 'next/image'
 
+const galleryImages = [
+  { src: '/IMG_8774.PNG', alt: 'Tom Sessions evaluating coffee at a cupping session' },
+  { src: '/IMG_8760.jpeg', alt: 'Coffee cupping session at origin' },
+  { src: '/IMG_8762.jpeg', alt: 'Green and roasted coffee samples at a cupping table' },
+]
+
 export default function About() {
   return (
     <section className="bg-espresso py-24 px-4 sm:px-6 lg:px-8 border-t-2 border-gold">
       <div className="max-w-5xl mx-auto">
-        <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
+
+        {/* Bio row */}
+        <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20 mb-16">
 
           {/* Headshot */}
           <div className="relative w-56 h-56 sm:w-72 sm:h-72 flex-shrink-0">
@@ -29,12 +37,28 @@ export default function About() {
             <p className="text-gray-400 text-lg leading-relaxed">
               Through Coffee Never Sleeps LLC, Tom brings that expertise directly to brands, retailers,
               and entrepreneurs who want to build exceptional coffee products without the guesswork.
-              Whether you're launching a new line or optimizing an existing one, Tom provides the
+              Whether you&apos;re launching a new line or optimizing an existing one, Tom provides the
               industry knowledge to get it right.
             </p>
           </div>
 
         </div>
+
+        {/* Gallery row */}
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+          {galleryImages.map((img) => (
+            <div key={img.src} className="relative aspect-[4/3] overflow-hidden">
+              <Image
+                src={img.src}
+                alt={img.alt}
+                fill
+                className="object-cover hover:scale-105 transition-transform duration-500"
+                sizes="(max-width: 640px) 100vw, 33vw"
+              />
+            </div>
+          ))}
+        </div>
+
       </div>
     </section>
   )
