@@ -5,8 +5,8 @@ export default function Hero() {
   return (
     <section className="relative min-h-screen bg-espresso flex items-center overflow-hidden">
 
-      {/* Farm photo — fills the right 62% of the hero, Tom's face/upper body visible at top */}
-      <div className="absolute right-0 top-0 h-full w-[62%]">
+      {/* Farm photo — desktop only */}
+      <div className="hidden lg:block absolute right-0 top-0 h-full w-[62%]">
         <Image
           src="/IMG_8845_4x.webp"
           alt="Tom Sessions at coffee origin — inspecting coffee plants at farm"
@@ -17,9 +17,9 @@ export default function Hero() {
         />
       </div>
 
-      {/* Gradient — solid espresso behind text, steep visible fade crossing into photo */}
+      {/* Gradient — desktop only, fades into photo */}
       <div
-        className="absolute inset-0"
+        className="hidden lg:block absolute inset-0"
         style={{
           background:
             'linear-gradient(to right, #1a1a1a 0%, #1a1a1a 38%, rgba(26,26,26,0.88) 48%, rgba(26,26,26,0.55) 58%, rgba(26,26,26,0.18) 68%, rgba(26,26,26,0.03) 76%, transparent 83%)',
