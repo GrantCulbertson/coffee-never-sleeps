@@ -1,32 +1,28 @@
 import Link from 'next/link'
+import Image from 'next/image'
 
 export default function Hero() {
   return (
     <section className="relative min-h-screen bg-espresso flex items-center overflow-hidden">
 
-      {/* Farm photo — anchored to right edge, full height, shows Tom's complete figure */}
-      {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img
-        src="/IMG_8845.PNG"
-        alt="Tom Sessions at coffee origin — inspecting coffee plants at farm"
-        style={{
-          position: 'absolute',
-          right: 0,
-          top: 0,
-          height: '100%',
-          width: 'auto',
-          objectFit: 'contain',
-          objectPosition: 'right top',
-        }}
-        fetchPriority="high"
-      />
+      {/* Farm photo — fills the right 55% of the hero, Tom's face/upper body visible at top */}
+      <div className="absolute right-0 top-0 h-full w-[55%]">
+        <Image
+          src="/IMG_8845.PNG"
+          alt="Tom Sessions at coffee origin — inspecting coffee plants at farm"
+          fill
+          className="object-cover object-top"
+          sizes="55vw"
+          priority
+        />
+      </div>
 
-      {/* Gradient overlay — solid espresso behind text, fades into photo on the right */}
+      {/* Gradient — solid espresso for text area, long fade into the photo */}
       <div
         className="absolute inset-0"
         style={{
           background:
-            'linear-gradient(to right, #1a1a1a 0%, #1a1a1a 32%, rgba(26,26,26,0.88) 48%, rgba(26,26,26,0.30) 65%, rgba(26,26,26,0.04) 80%, transparent 90%)',
+            'linear-gradient(to right, #1a1a1a 0%, #1a1a1a 26%, rgba(26,26,26,0.92) 38%, rgba(26,26,26,0.55) 52%, rgba(26,26,26,0.12) 63%, transparent 73%)',
         }}
       />
 
