@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import PhotoGallery from './PhotoGallery'
 
 const galleryImages = [
   { src: '/IMG_8774.PNG', alt: 'Tom Sessions evaluating coffee at a cupping session' },
@@ -15,10 +16,10 @@ export default function About() {
         <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20 mb-16">
 
           {/* Headshot */}
-          <div className="relative w-56 h-56 sm:w-72 sm:h-72 flex-shrink-0">
+          <div className="relative w-56 h-56 sm:w-72 sm:h-72 flex-shrink-0 overflow-hidden shadow-xl">
             <Image
-              src="/tom-sessions.jpg"
-              alt="Tom Sessions — Coffee Industry Consultant"
+              src="/IMG_8845.PNG"
+              alt="Tom Sessions at coffee origin"
               fill
               className="object-cover object-top"
               sizes="(max-width: 640px) 224px, 288px"
@@ -45,19 +46,7 @@ export default function About() {
         </div>
 
         {/* Gallery row */}
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-          {galleryImages.map((img) => (
-            <div key={img.src} className="relative aspect-[4/3] overflow-hidden">
-              <Image
-                src={img.src}
-                alt={img.alt}
-                fill
-                className="object-cover hover:scale-105 transition-transform duration-500"
-                sizes="(max-width: 640px) 100vw, 33vw"
-              />
-            </div>
-          ))}
-        </div>
+        <PhotoGallery images={galleryImages} />
 
       </div>
     </section>
