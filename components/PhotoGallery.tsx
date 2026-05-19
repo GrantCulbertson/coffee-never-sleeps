@@ -47,18 +47,18 @@ export default function PhotoGallery({ images }: { images: GalleryImage[] }) {
           className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 p-4"
           onClick={close}
         >
+          {/* Close button — anchored to the overlay, always visible inside the viewport */}
+          <button
+            onClick={close}
+            className="absolute top-4 right-5 text-white/60 hover:text-white text-sm tracking-widest uppercase transition-colors duration-150 z-10"
+          >
+            Close ✕
+          </button>
+
           <div
             className="relative w-full max-w-4xl max-h-[90vh]"
             onClick={(e) => e.stopPropagation()}
           >
-            {/* Close button */}
-            <button
-              onClick={close}
-              className="absolute -top-10 right-0 text-white/60 hover:text-white text-sm tracking-widest uppercase transition-colors duration-150"
-            >
-              Close ✕
-            </button>
-
             {/* Image */}
             <div className="relative w-full max-h-[85vh]">
               <Image
