@@ -3,7 +3,7 @@ import PhotoGallery from './PhotoGallery'
 
 const galleryImages = [
   { src: '/IMG_8774.PNG', alt: 'Tom Sessions evaluating coffee at a cupping session' },
-  { src: '/IMG_8760.jpeg', alt: 'Coffee cupping session at origin' },
+  { src: '/IMG_aldi.jpeg.jpeg', alt: 'Tom Sessions with a private label cold brew product placed at Aldi' },
   { src: '/IMG_8762.jpeg', alt: 'Green and roasted coffee samples at a cupping table' },
 ]
 
