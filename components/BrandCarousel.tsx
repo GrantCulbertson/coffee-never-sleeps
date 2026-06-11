@@ -40,7 +40,7 @@ function BrandRow({ ariaHidden = false }: { ariaHidden?: boolean }) {
 
 export default function BrandCarousel() {
   return (
-    <section className="bg-espresso-dark py-20 overflow-hidden">
+    <section className="bg-espresso-dark pt-4 pb-20 overflow-hidden">
       <div className="text-center mb-12 px-4">
         <p className="text-gold text-sm tracking-[0.25em] uppercase mb-3">Trusted Experience</p>
         <h2 className="font-serif text-3xl sm:text-4xl text-white">

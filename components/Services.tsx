@@ -33,7 +33,7 @@ const services = [
 
 export default function Services() {
   return (
-    <section className="bg-espresso-dark py-24 px-4 sm:px-6 lg:px-8">
+    <section className="bg-espresso-dark pt-24 pb-10 px-4 sm:px-6 lg:px-8">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
           <p className="text-gold text-sm tracking-[0.25em] uppercase mb-3">What Tom Offers</p>

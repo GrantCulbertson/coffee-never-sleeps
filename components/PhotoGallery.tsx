@@ -55,17 +55,17 @@ export default function PhotoGallery({ images }: { images: GalleryImage[] }) {
           ))}
         </div>
 
-        {/* Arrows — desktop only */}
+        {/* Arrows */}
         <button
           onClick={() => scrollByCard(-1)}
-          className="hidden sm:flex absolute -left-4 top-1/2 -translate-y-1/2 w-9 h-9 items-center justify-center rounded-full bg-espresso-dark/90 border border-gold/30 text-gold hover:bg-gold hover:text-espresso transition-colors duration-200"
+          className="flex absolute left-1 sm:-left-4 top-1/2 -translate-y-1/2 w-9 h-9 items-center justify-center rounded-full bg-espresso-dark/90 border border-gold/30 text-gold hover:bg-gold hover:text-espresso transition-colors duration-200 z-10"
           aria-label="Previous photo"
         >
           ‹
         </button>
         <button
           onClick={() => scrollByCard(1)}
-          className="hidden sm:flex absolute -right-4 top-1/2 -translate-y-1/2 w-9 h-9 items-center justify-center rounded-full bg-espresso-dark/90 border border-gold/30 text-gold hover:bg-gold hover:text-espresso transition-colors duration-200"
+          className="flex absolute right-1 sm:-right-4 top-1/2 -translate-y-1/2 w-9 h-9 items-center justify-center rounded-full bg-espresso-dark/90 border border-gold/30 text-gold hover:bg-gold hover:text-espresso transition-colors duration-200 z-10"
           aria-label="Next photo"
         >
           ›
