@@ -36,7 +36,7 @@ export default function Hero() {
             25 Years in the Coffee Industry
           </p>
           <h1 className="font-serif text-4xl sm:text-5xl text-white leading-tight mb-6">
-            Coffee Consulting,<br />From Bean to Bottle
+            From Mountaintop<br />to Countertop
           </h1>
           <p className="text-gray-400 text-lg leading-relaxed mb-10 max-w-md">
             Sourcing, roasting, private label, concentrates, and RTDs — expert guidance at every stage.

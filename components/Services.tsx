@@ -24,6 +24,11 @@ const services = [
     description:
       'Consulting on RTD coffee product development and go-to-market. Formulation, co-packing, and distribution strategy.',
   },
+  {
+    title: 'Equipment',
+    description:
+      'From Roast & Ground bulk batch brewing to single-serve solutions, we provide scalable dispensing options tailored to your business needs. Our innovative espresso and cold brew solutions help boost speed of service so you can serve more customers, more efficiently.',
+  },
 ]
 
 export default function Services() {

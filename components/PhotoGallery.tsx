@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect, useCallback } from 'react'
+import { useState, useEffect, useCallback, useRef } from 'react'
 import Image from 'next/image'
 
 interface GalleryImage {
@@ -10,6 +10,7 @@ interface GalleryImage {
 
 export default function PhotoGallery({ images }: { images: GalleryImage[] }) {
   const [active, setActive] = useState<GalleryImage | null>(null)
+  const trackRef = useRef<HTMLDivElement>(null)
 
   const close = useCallback(() => setActive(null), [])
 
@@ -20,46 +21,55 @@ export default function PhotoGallery({ images }: { images: GalleryImage[] }) {
     return () => window.removeEventListener('keydown', onKey)
   }, [active, close])
 
+  const scrollByCard = (dir: 1 | -1) => {
+    const track = trackRef.current
+    if (!track) return
+    const card = track.firstElementChild as HTMLElement | null
+    if (!card) return
+    track.scrollBy({ left: dir * (card.offsetWidth + 12), behavior: 'smooth' })
+  }
+
   return (
     <>
-      {/* Mobile carousel */}
-      <div className="flex sm:hidden overflow-x-auto snap-x snap-mandatory scrollbar-hide gap-3 -mx-4 px-4">
-        {images.map((img) => (
-          <button
-            key={img.src}
-            onClick={() => setActive(img)}
-            className="relative snap-center flex-none w-[82vw] aspect-[4/3] overflow-hidden shadow-lg cursor-zoom-in group rounded-sm"
-            aria-label={`View: ${img.alt}`}
-          >
-            <Image
-              src={img.src}
-              alt={img.alt}
-              fill
-              className="object-cover group-hover:scale-105 transition-transform duration-500"
-              sizes="82vw"
-            />
-          </button>
-        ))}
-      </div>
+      <div className="relative">
+        {/* Carousel track */}
+        <div
+          ref={trackRef}
+          className="flex overflow-x-auto snap-x snap-mandatory scrollbar-hide gap-3 -mx-4 px-4 sm:mx-0 sm:px-0"
+        >
+          {images.map((img) => (
+            <button
+              key={img.src}
+              onClick={() => setActive(img)}
+              className="relative snap-center flex-none w-[82vw] sm:w-[45%] lg:w-[32%] aspect-[4/3] overflow-hidden shadow-lg cursor-zoom-in group rounded-sm"
+              aria-label={`View: ${img.alt}`}
+            >
+              <Image
+                src={img.src}
+                alt={img.alt}
+                fill
+                className="object-cover group-hover:scale-105 transition-transform duration-500"
+                sizes="(max-width: 640px) 82vw, (max-width: 1024px) 45vw, 32vw"
+              />
+            </button>
+          ))}
+        </div>
 
-      {/* Desktop grid */}
-      <div className="hidden sm:grid sm:grid-cols-3 gap-4">
-        {images.map((img) => (
-          <button
-            key={img.src}
-            onClick={() => setActive(img)}
-            className="relative aspect-[4/3] overflow-hidden shadow-lg cursor-zoom-in group"
-            aria-label={`View: ${img.alt}`}
-          >
-            <Image
-              src={img.src}
-              alt={img.alt}
-              fill
-              className="object-cover group-hover:scale-105 transition-transform duration-500"
-              sizes="33vw"
-            />
-          </button>
-        ))}
+        {/* Arrows — desktop only */}
+        <button
+          onClick={() => scrollByCard(-1)}
+          className="hidden sm:flex absolute -left-4 top-1/2 -translate-y-1/2 w-9 h-9 items-center justify-center rounded-full bg-espresso-dark/90 border border-gold/30 text-gold hover:bg-gold hover:text-espresso transition-colors duration-200"
+          aria-label="Previous photo"
+        >
+          ‹
+        </button>
+        <button
+          onClick={() => scrollByCard(1)}
+          className="hidden sm:flex absolute -right-4 top-1/2 -translate-y-1/2 w-9 h-9 items-center justify-center rounded-full bg-espresso-dark/90 border border-gold/30 text-gold hover:bg-gold hover:text-espresso transition-colors duration-200"
+          aria-label="Next photo"
+        >
+          ›
+        </button>
       </div>
 
       {/* Lightbox */}

@@ -5,6 +5,7 @@ const galleryImages = [
   { src: '/IMG_8774.PNG', alt: 'Tom Sessions evaluating coffee at a cupping session' },
   { src: '/IMG_aldi.jpeg.jpeg', alt: 'Tom Sessions with a private label cold brew product placed at Aldi' },
   { src: '/IMG_8762.jpeg', alt: 'Green and roasted coffee samples at a cupping table' },
+  { src: '/coffee_on_balcony.jpeg', alt: 'Coffee on a balcony overlooking the landscape' },
 ]
 
 export default function About() {
